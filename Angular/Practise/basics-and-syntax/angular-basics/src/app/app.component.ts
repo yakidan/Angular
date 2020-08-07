@@ -16,12 +16,17 @@ export interface Post {
 export class AppComponent {
   posts: Post[] = [
     {title: 'Angular component', text: 'I am learning component', id: 1},
-    {title: 'next block:', text: 'About pipes'},
+    {title: 'next block:', text: 'About pipes', id: 2},
   ]
 
 
   updatePost(post: Post) {
     this.posts.unshift(post)
     //console.log('Post', post)
+  }
+
+  removePost(id: number) {
+    console.log('Id to remove', id)
+    this.posts = this.posts.filter(p => p.id !== id)
   }
 }
