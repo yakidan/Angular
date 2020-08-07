@@ -1,15 +1,4 @@
 <h1>Hello Angular</h1>
 
-<!-- <p>{{title}}</p>
-<img [src]="img">
-<p><strong>{{arr}}</strong></p>
-<p><strong>{{obj.a}}</strong></p> -->
-<button (click)="onClick()">Click</button>
-<input type="text"
-       (keyup.enter)="onInput($event)"
-       (blur)="onBlur(myInput.value)" #myInput/>
-<p><strong>{{inputValue}}</strong></p>
-<app-post></app-post>
-
-<hr/>
-<app-post4></app-post4>
+<input type="text" [(ngModel)]="title">
+<p>{{title}}</p>>
