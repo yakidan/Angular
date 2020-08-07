@@ -19,6 +19,7 @@ export class AppComponent {
     {title: 'next block:', text: 'About pipes'},
   ]
 
+
   updatePost(post: Post) {
     this.posts.unshift(post)
     //console.log('Post', post)

@@ -2,13 +2,19 @@
   <h1>Angular Components </h1>
 
   <app-post-form
-  (onAdd)="updatePost($event)"
+    (onAdd)="updatePost($event)"
   ></app-post-form>
 
   <hr>
 
-  <app-post *ngFor="let p of posts"
-            [post]="p"
-  ></app-post>
+  <app-post
+    *ngFor="let p of posts"
+    [post]="p"
+  >
+    <small *ngIf="p.text.length>10;else shortPost">Пост Длинный</small>
+    <ng-template #shortPost>
+      <small>Пост короткий</small>
+    </ng-template>
+  </app-post>
 
 </div>
