@@ -7,7 +7,8 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
-  toggle=false;
+  toggle:any=false;
+
 
 
 
