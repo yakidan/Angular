@@ -1,6 +1,21 @@
 <div class="container">
   <h1>Angular Pipes</h1>
-  <p>{{'Hello World ' | exMarks}}</p>
 
 
+  <button class="btn" [ngClass]="{
+  'btn-use':UseButtonTitle
+  }" (click)="searchBy($event)" name="title">Title
+  </button>
+  <button class="btn" [ngClass]="{
+  'btn-use':!UseButtonTitle
+  }" (click)="searchBy($event)" name="text">Text
+  </button>
+  <input type="text" [(ngModel)]="search">
+  <h6>{{search}}</h6>
+  <div
+    *ngFor="let post of posts | filter:search:searchField"
+    class="card">
+    <h2>{{post.title}}</h2>
+    <p>{{post.text}}</p>
+  </div>
 </div>

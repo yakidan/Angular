@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 export interface Post {
   title: string
   text: string
-  id?: number
+
 
 }
 
@@ -14,22 +14,21 @@ export interface Post {
 })
 
 export class AppComponent {
-  e: number = Math.E;
 
-  str = 'Hello World'
+  search = ''
+  searchField: string = 'title'
+  UseButtonTitle: boolean = true
+  posts: Post[] = [
+    {title: 'Bear', text: 'The best Bear'},
+    {title: 'Animal', text: 'The best Animal'},
+    {title: 'Js', text: 'Js is language'},
+  ]
 
-  date: Date = new Date()
-
-  float: number = 0.42
-
-  obj = {
-    a: 1,
-    b: {
-      c: 2,
-      d: {
-        e: 3,
-        f: 4
-      }
-    }
+//change search params and class of button
+  searchBy(event) {
+    console.log(event.target.name)
+    this.searchField = event.target.name
+    this.UseButtonTitle = !this.UseButtonTitle
   }
+
 }
