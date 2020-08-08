@@ -1,25 +1,12 @@
 <div class="container">
-  <h1>Angular Directives</h1>
-  <p [appStyle]="'red'" [dStyles]="{border:'1px solid blue',
-   borderRadius:'5px',
-   fontWeight:'bold'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, nisi.</p>
-
-  <button class="btn" (click)="isVisible=!isVisible"></button>
-
-  <!--  <div *ngIf="isVisible" class="wrap">-->
-  <!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi dolor ducimus eum facere laborum-->
-  <!--      necessitatibus pariatur ut vitae voluptatem?</p>-->
-  <!--  </div>-->
-  <!--  <ng-template [ngIf]="isVisible">-->
-  <!--  <div  class="wrap">-->
-  <!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi dolor ducimus eum facere laborum-->
-  <!--      necessitatibus pariatur ut vitae voluptatem?</p>-->
-  <!--  </div>-->
-  <!--  </ng-template>-->
-<!--  use structural directive-->
-  <div class="wrap" *appIfnot="isVisible">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim et quod saepe temporibus vel? Aliquam eaque
-      expedita incidunt laudantium quasi.</p>
-  </div>
+  <h1>Angular Pipes</h1>
+  <p>
+    {{e|number:'1.1-5'}}
+  </p>
+  <p>
+    {{e|number:'3.1-2'}}
+  </p>
+  <p>
+    {{e|number:'1.0-0'}}
+  </p>
 </div>

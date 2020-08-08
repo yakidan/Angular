@@ -14,5 +14,5 @@ export interface Post {
 })
 
 export class AppComponent {
-  isVisible = true;
+  e:number=Math.E;
 }
