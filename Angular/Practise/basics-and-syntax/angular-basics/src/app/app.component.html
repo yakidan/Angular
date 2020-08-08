@@ -1,8 +1,16 @@
 <div class="container">
   <h1>Angular Pipes</h1>
-<!--  https://angular.io/api/common/DatePipe-->
+  <!--  https://angular.io/api/common/DatePipe-->
   <p>
-    {{date| date:'MM-dd-yyyy HH:mm:ss z'}}
+    {{float}}
   </p>
+  <p>
+    {{float| currency}}
+  </p>
+  <p>
+    {{float|percent}}
+  </p>
+
+  <pre>{{obj|json}}</pre>
 
 </div>
