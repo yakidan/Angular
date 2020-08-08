@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Observable} from "rxjs";
 
 export interface Post {
   title: string
@@ -15,26 +16,14 @@ export interface Post {
 
 export class AppComponent {
 
-  search = ''
-  searchField: string = 'title'
-  UseButtonTitle: boolean = true
-  posts: Post[] = [
-    {title: 'Bear', text: 'The best Bear'},
-    {title: 'Animal', text: 'The best Animal'},
-    {title: 'Js', text: 'Js is language'},
-  ]
-
-//change search params and class of button
-  searchBy(event) {
-    console.log(event.target.name)
-    this.searchField = event.target.name
-    this.UseButtonTitle = !this.UseButtonTitle
-  }
-
-  addPost() {
-    this.posts.unshift({
-      title: 'Angular 8',
-      text: 'Daniil is student of the course '
-    })
-  }
+  promise: Promise<string> = new Promise<string>(resolve => {
+    setTimeout(() => {
+      resolve('Promise Resolved')
+    }, 4000)
+  })
+  date: Observable<Date> = new Observable<Date>(obs => {
+    setInterval(() => {
+      obs.next(new Date())
+    }, 1000)
+  })
 }

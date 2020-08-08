@@ -1,22 +1,6 @@
 <div class="container">
   <h1>Angular Pipes</h1>
-
-
-  <button class="btn" [ngClass]="{
-  'btn-use':UseButtonTitle
-  }" (click)="searchBy($event)" name="title">Title
-  </button>
-  <button class="btn" [ngClass]="{
-  'btn-use':!UseButtonTitle
-  }" (click)="searchBy($event)" name="text">Text
-  </button>
-  <button class="btn" (click)="addPost()">Add new Post</button>
-  <input type="text" [(ngModel)]="search">
-  <h6>{{search}}</h6>
-  <div
-    *ngFor="let post of posts | filter:search:searchField"
-    class="card">
-    <h2>{{post.title}}</h2>
-    <p>{{post.text}}</p>
-  </div>
+  <!--use async Pipe-->
+  <p>Wait fot it...{{promise|async}}</p>
+  <p>Date: {{date|async|date:'long'}}</p>
 </div>
