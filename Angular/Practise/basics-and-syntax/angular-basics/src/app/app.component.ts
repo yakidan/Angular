@@ -13,6 +13,6 @@ export interface Post {
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent  {
-
+export class AppComponent {
+  isVisible = true;
 }
