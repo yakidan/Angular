@@ -1,9 +1,8 @@
 <div class="container">
   <h1>Angular Pipes</h1>
+<!--  https://angular.io/api/common/DatePipe-->
   <p>
-    {{str | uppercase | lowercase|titlecase}}
+    {{date| date:'MM-dd-yyyy HH:mm:ss z'}}
   </p>
-  <p>
-    {{str | titlecase | slice: 1:-2}}
-  </p>
+
 </div>

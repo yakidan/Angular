@@ -17,4 +17,6 @@ export class AppComponent {
   e: number = Math.E;
 
   str = 'Hello World'
+
+  date: Date = new Date()
 }
