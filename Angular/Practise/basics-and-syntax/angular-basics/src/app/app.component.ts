@@ -31,4 +31,10 @@ export class AppComponent {
     this.UseButtonTitle = !this.UseButtonTitle
   }
 
+  addPost() {
+    this.posts.unshift({
+      title: 'Angular 8',
+      text: 'Daniil is student of the course '
+    })
+  }
 }
