@@ -11,4 +11,5 @@ export class LocalCounterService {
   decrease() {
     this.counter--
   }
+
 }
