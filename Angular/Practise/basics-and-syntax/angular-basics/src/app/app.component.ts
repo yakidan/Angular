@@ -7,7 +7,6 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./app.component.scss'],
 
 })
-
 export class AppComponent implements OnInit {
 
   ngOnInit() {
@@ -34,5 +33,19 @@ export class AppComponent implements OnInit {
       const formData = {...this.form.value}
       console.log("Form data:", formData)
     }
+  }
+
+  setCapital() {
+    const cityMap = {
+      ru: 'Москва',
+      ua: 'Киев',
+      bu: 'Минск',
+    }
+    const cityKey = this.form.get('address').get('country').value
+    const city = cityMap[cityKey]
+    this.form.patchValue({
+      address: {city}
+    })
+    console.log(city)
   }
 }
