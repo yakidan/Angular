@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {interval, Subscription} from 'rxjs'
 
-// import {} from 'rxjs/operators'
+import {map, filter, switchMap} from 'rxjs/operators'
 
 @Component({
   selector: 'app-root',
@@ -16,9 +16,17 @@ export class AppComponent {
 
     const intervalStream$ = interval(1000)
 
-    this.sub = intervalStream$.subscribe((value) => {
-      console.log(value)
-    })
+    this.sub = intervalStream$
+      .pipe(
+        filter((value) => value % 2 === 0),
+        map((value) => {
+          `Mapped value ${value}`
+        }),
+        switchMap(()=>interval(500))
+      )
+      .subscribe((value) => {
+        console.log(value)
+      })
   }
 
   stop() {
