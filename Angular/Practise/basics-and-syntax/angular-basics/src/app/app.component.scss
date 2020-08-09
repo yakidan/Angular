@@ -7,3 +7,11 @@ p {
   background: rgba(52,215,34,0.98);
   color: #000;
 }
+input{
+  &.ng-invalid.ng-touched{
+    border:1px solid red
+  }
+  &.ng-valid.ng-touched{
+    border: 1px solid green;
+  }
+}
