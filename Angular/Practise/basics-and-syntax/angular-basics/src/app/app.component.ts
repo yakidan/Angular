@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -10,12 +10,18 @@ import {FormGroup} from "@angular/forms";
 
 export class AppComponent implements OnInit {
   ngOnInit() {
-    this.form = new FormGroup({})
+    this.form = new FormGroup({
+      email: new FormControl(''),
+      password: new FormControl(null),
+    })
   }
 
   form: FormGroup
 
+
   submit() {
-    console.log('Form submitted', this.form)
+    console.log('Form:', this.form)
+    const formData = {...this.form.value}
+    console.log("Form data:",formData)
   }
 }
