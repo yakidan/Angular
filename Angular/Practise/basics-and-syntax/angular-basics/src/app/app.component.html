@@ -5,13 +5,30 @@
     <div class="form-control">
       <label>Email</label>
       <input type="text" placeholder="Email" formControlName="email">
-      <div class="validation"></div>
+
+      <pre>{{form.get('email').errors|json}}</pre>
+
+       <div *ngIf="form.get('email').invalid && form.get('email').touched "
+           class="validation">
+        <small *ngIf="form.get('email').errors.required">Поле email не может быть пустым</small>
+        <small *ngIf="form.get('email').errors.email">Введите корректный Email</small>
+      </div>
     </div>
 
     <div class="form-control">
       <label>Пароль</label>
+
+      <pre>{{form.get('password').errors|json}}</pre>
+
       <input type="password" placeholder="Пароль" formControlName="password">
-      <div class="validation"></div>
+      <div *ngIf="form.get('password').invalid && form.get('password').touched "
+           class="validation">
+        <small *ngIf="form.get('password').errors.required">Пароль не может быть пустым</small>
+        <small *ngIf="form.get('password').errors.minlength">Минимальная длина
+          пароля должна быть не менее {{form.get('password').errors.minlength.requiredLength}} <br>
+          Сейчас количетсво символов {{form.get('password').errors.minlength.actualLength}}
+        </small>
+      </div>
     </div>
 
     <div class="card">
