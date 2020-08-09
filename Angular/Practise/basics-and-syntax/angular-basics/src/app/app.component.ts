@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {interval} from 'rxjs'
+import {interval, Subscription} from 'rxjs'
 
 // import {} from 'rxjs/operators'
 
@@ -10,14 +10,18 @@ import {interval} from 'rxjs'
 })
 
 export class AppComponent {
+  sub: Subscription
 
   constructor() {
 
     const intervalStream$ = interval(1000)
 
-    intervalStream$.subscribe((value)=>{
+    this.sub = intervalStream$.subscribe((value) => {
       console.log(value)
     })
   }
 
+  stop() {
+    this.sub.unsubscribe()
+  }
 }
