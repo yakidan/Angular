@@ -6,8 +6,6 @@
       <label>Email</label>
       <input type="text" placeholder="Email" formControlName="email">
 
-      <pre>{{form.get('email').errors|json}}</pre>
-
        <div *ngIf="form.get('email').invalid && form.get('email').touched "
            class="validation">
         <small *ngIf="form.get('email').errors.required">Поле email не может быть пустым</small>
@@ -17,8 +15,6 @@
 
     <div class="form-control">
       <label>Пароль</label>
-
-      <pre>{{form.get('password').errors|json}}</pre>
 
       <input type="password" placeholder="Пароль" formControlName="password">
       <div *ngIf="form.get('password').invalid && form.get('password').touched "
@@ -31,21 +27,22 @@
       </div>
     </div>
 
-    <div class="card">
+<!--    create group-->
+    <div class="card" formGroupName="address">
       <h2>Адрес</h2>
 
-      <div class="form-control">
+      <div class="form-control"  >
         <label>Страна</label>
 
-        <select>
+        <select formControlName="country">
           <option value="ru">Россия</option>
           <option value="ua">Украина</option>
           <option value="by">Беларусь</option>
         </select>
       </div>
 
-      <div class="form-control">
-        <input type="text">
+      <div class="form-control" >
+        <input type="text" formControlName="city" placeholder="Казань">
       </div>
 
       <button class="btn" type="button">Выбрать столицу</button>
