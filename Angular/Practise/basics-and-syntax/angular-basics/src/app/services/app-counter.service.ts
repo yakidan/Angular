@@ -13,5 +13,5 @@ export class AppCounterService {
   decrease() {
     this.counter--
   }
-  
+
 }
